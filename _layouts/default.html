@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} · {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+  <!-- ===== Simple password gate ===== -->
+  <div id="password-overlay">
+    <div id="password-box">
+      <h2>This site is protected</h2>
+      <p>Please enter the password to continue.</p>
+      <input type="password" id="password-input" placeholder="Password">
+      <button id="password-submit">Enter</button>
+      <p id="password-error" style="color:#c0392b; display:none;">Incorrect password, please try again.</p>
+    </div>
+  </div>
+
+  <div id="site-content" style="display:none;">
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-brand">{{ site.title }}</a>
+      <a href="{{ '/projects.html' | relative_url }}">Projects</a>
+      <a href="{{ '/teaching.html' | relative_url }}">Teaching</a>
+    </nav>
+
+    <main class="page-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+    </footer>
+  </div>
+
+  <script src="{{ '/assets/js/password.js' | relative_url }}"></script>
+</body>
+</html>

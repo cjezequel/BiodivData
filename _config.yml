@@ -1,0 +1,12 @@
+title: "Your Name"
+description: "Personal academic website — Projects & Teaching"
+theme: jekyll-theme-minimal
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+
+# Files/folders Jekyll should ignore when building the site
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
